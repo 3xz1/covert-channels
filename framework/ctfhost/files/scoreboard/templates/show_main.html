@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="row" xmlns="http://www.w3.org/1999/html">
+        <div class="col-sm-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Flag Receiver</h3>
+                </div>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>State</td> <td>{{flag_receiver_state}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                {% if flag_receiver_state == 'Inactive' %}
+                                <div class="btn-group">
+                                    <a href="/module/flagreceiver/start" onclick="return confirm('Are you sure?')"> <button type="button" class="btn btn-warning"{% if current_round == 'Game has finished.' %}disabled{% endif %}>Start</button></a>
+                                </div>
+                                {% else %}
+                                <div class="btn-group">
+                                    <a href="/module/flagreceiver/stop" onclick="return confirm('Are you sure?')"> <button type="button" class="btn btn-warning">Stop</button></a>
+                                </div>
+                                <div class="btn-group">
+                                    <a href="/module/flagreceiver/restart" onclick="return confirm('Are you sure?')"> <button type="button" class="btn btn-warning"{% if current_round == 'Game has finished.' %}disabled{% endif %}>Restart</button></a>
+                                </div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Sniffer</h3>
+                </div>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>State</td> <td>{{sniffer_state}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                {% if sniffer_state == 'Inactive' %}
+                                <div class="btn-group">
+                                    <a href="/module/sniffer/start" onclick="return confirm('Are you sure?')"> <button type="button" class="btn btn-warning" {% if current_round == 'Game has finished.' %}disabled{% endif %}>Start</button></a>
+                                </div>
+                                {% else %}
+                                <div class="btn-group">
+                                    <a href="/module/sniffer/stop" onclick="return confirm('Are you sure?')"> <button type="button" class="btn btn-warning">Stop</button></a>
+                                </div>
+                                <div class="btn-group">
+                                    <a href="/module/sniffer/restart" onclick="return confirm('Are you sure?')"> <button type="button" class="btn btn-warning">Restart</button></a>
+                                </div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+{% endblock %}

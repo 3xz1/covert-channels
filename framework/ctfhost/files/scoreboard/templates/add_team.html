@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="/teams/add/" method="post">
+        <div class="form-group row">
+            <label for="team_name" class="col-xs-3 col-form-label">Name</label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" name="team_name"
+                       placeholder="Team 1" required="true">
+            </div>
+
+            <label for="team_address" class="col-xs-3 col-form-label">Address</label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" name="team_address"
+                       placeholder="127.0.0.1" required="true">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+{% endblock %}

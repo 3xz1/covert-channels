@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<table style="width:60%">
+	<tr>
+		<th>Flags</th>
+	</tr>
+	{% for flag in flags%}
+		<tr>
+			<th>{{flag.flag_content}}</th>
+		</tr>
+	{% endfor %}
+</table>
+{% endblock %}

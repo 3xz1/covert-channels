@@ -1,0 +1,4 @@
+FROM postgres
+
+ENV POSTGRES_PASSWORD="e4fab8b07cccb7c0d496f62ce878ef2acb2c1885eb7d792e6be0ba0fa44b1cbe18b06661c7470ab916e76a8d1fed80ebd980dcefd4b6d6e2a3eb6a36a0bbce71"
+COPY ./files/init.sql /docker-entrypoint-initdb.d/init.sql

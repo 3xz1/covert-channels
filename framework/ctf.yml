@@ -1,0 +1,29 @@
+version: '2'
+services:
+        #ctfhost:
+        #container_name: ctfhost
+        #build: ctfhost
+        ##network_mode: host
+        #ports:
+        #- "1337:1337"
+        #- "4444:4444"
+        #- "80:80"
+        ##restart: always
+        #volumes:
+        #    - ./ctfhost/logs:/home/ctf/logs
+        #    #- ./ctfhost/checker_volume:/home/ctf/checker
+        #depends_on:
+        #- ctfdb
+        #- team01
+        #links:
+        #- "ctfdb"
+
+    ctfdb:
+        container_name: ctfdb
+        build: ctfdb
+        #network_mode: host
+        ports:
+        - "5432:5432"
+        #volumes:
+        #    - ./ctfdb/database:/var/lib/mysql
+        #restart: always

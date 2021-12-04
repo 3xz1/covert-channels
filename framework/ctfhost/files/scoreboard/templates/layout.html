@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+    <title>HSO-CTF</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+
+        .value {
+            padding-right: 20px;
+            display: table-cell;
+        }
+
+        .key {
+            padding-right: 20px;
+            font-weight: bold;
+            display: table-cell;
+        }
+
+        .row {
+            display: table-row;
+            color: black;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: black;
+            font-weight: bold;
+        }
+
+        a:active {
+            text-decoration: underline;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-inverse">
+        <a class="navbar-brand" href="/">Scoreboard</a>
+        <a class="navbar-brand" href="/rules">Rules</a>
+    </nav>
+
+    {% block body %}{% endblock %}
+
+</body>

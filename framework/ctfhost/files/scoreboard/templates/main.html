@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block head %}
+{#    Autoreload    #}
+     <meta http-equiv="refresh" content="20" />
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+    <div style="text-align: center">Standing</div>
+
+    <div id="plot" style="width:100%;height:450px;"></div>
+<table style="width:60%">
+    <tr>
+        <th>Team</th>
+        <th>Score</th>
+    </tr>
+    {% for team in teams %}
+        <tr>
+            <th>{{team.id}}</th>
+            <th>{{team.score}}</th>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

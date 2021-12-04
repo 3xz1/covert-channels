@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+    {% if count == 0 %}
+        <b>No teams.</b>
+    {% else %}
+    <div class="row" xmlns="http://www.w3.org/1999/html">
+        {% for team in teams %}
+        <div class="col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{team.name}}</h3>
+            </div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td>{{team.address}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="btn-group">
+                <a href="/teams/{{team.id}}/edit/"> <button type="button" class="btn btn-warning">Edit</button> </a>
+            </div>
+            <div><br><br></div>
+        </div>
+
+
+        {% endfor %}
+    </div>
+
+    {% endif %}
+
+{% endblock %}

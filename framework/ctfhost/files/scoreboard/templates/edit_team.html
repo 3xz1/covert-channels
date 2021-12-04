@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <form action="/teams/{{ team.id }}/edit/" method="post">
+        <div class="form-group row">
+            <label for="team_name" class="col-xs-3 col-form-label">Name</label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" name="team_name"
+                       placeholder="Team 1" required="true" value="{{
+                        team.name}}">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="team_address" class="col-xs-3
+            col-form-label">Address</label>
+
+            <div class="col-xs-9">
+                <input type="text" class="form-control" name="team_address"
+                       placeholder="127.0.0.1" value="{{ team.address
+                        }}">
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <div class="btn-group">
+
+            <a href="/teams/"> <button type="button" class="btn
+        btn-warning">Cancel</button> </a>
+            <a href="/teams/{{ team.id }}/delete/" onclick="return confirm('Are you sure?')"> <button type="button"
+                                                                 class="btn
+        btn-danger">Delete</button> </a>
+        </div>
+
+    </form>
+{% endblock %}
